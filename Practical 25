@@ -1,0 +1,27 @@
+class Table {
+    synchronized void printTable(int n) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n * i);
+        }
+    }
+}
+
+class ThreadA extends Thread {
+    Table t;
+    ThreadA(Table t) { this.t = t; }
+    public void run() { t.printTable(5); }
+}
+
+class ThreadB extends Thread {
+    Table t;
+    ThreadB(Table t) { this.t = t; }
+    public void run() { t.printTable(7); }
+}
+
+class SyncDemo {
+    public static void main(String[] args) {
+        Table t = new Table();
+        new ThreadA(t).start();
+        new ThreadB(t).start();
+    }
+}
