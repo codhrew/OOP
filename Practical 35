@@ -1,0 +1,39 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class BarChartApp extends Application {
+    public void start(Stage stage) {
+        HBox root = new HBox(20);
+
+        VBox p = new VBox();
+        Rectangle r1 = new Rectangle(50, 100, Color.RED);
+        p.getChildren().addAll(r1, new Text("Projects 20%"));
+
+        VBox q = new VBox();
+        Rectangle r2 = new Rectangle(50, 50, Color.BLUE);
+        q.getChildren().addAll(r2, new Text("Quizzes 10%"));
+
+        VBox m = new VBox();
+        Rectangle r3 = new Rectangle(50, 150, Color.GREEN);
+        m.getChildren().addAll(r3, new Text("Midterm 30%"));
+
+        VBox f = new VBox();
+        Rectangle r4 = new Rectangle(50, 200, Color.ORANGE);
+        f.getChildren().addAll(r4, new Text("Final 40%"));
+
+        root.getChildren().addAll(p, q, m, f);
+
+        stage.setScene(new Scene(root, 400, 300));
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
