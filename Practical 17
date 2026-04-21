@@ -1,0 +1,24 @@
+interface Exam {
+    boolean isPassed(int mark);
+}
+
+interface Classify2 {
+    String getDivision(double average);
+}
+
+class Result2 implements Exam, Classify2 {
+    public boolean isPassed(int mark) {
+        return mark >= 40;
+    }
+
+    public String getDivision(double average) {
+        if (average >= 60) return "First Division";
+        else return "Second Division";
+    }
+
+    public static void main(String[] args) {
+        Result2 r = new Result2();
+        System.out.println(r.isPassed(50));
+        System.out.println(r.getDivision(70));
+    }
+}
