@@ -1,0 +1,19 @@
+import java.util.*;
+
+class Playlist {
+    public static void main(String[] args) {
+        LinkedList<String> songs = new LinkedList<>();
+
+        songs.add("Song1");
+        songs.add("Song2");
+        songs.add("Song3");
+
+        System.out.println(songs);
+
+        songs.removeFirst();
+        System.out.println(songs);
+
+        songs.removeLast();
+        System.out.println(songs);
+    }
+}
