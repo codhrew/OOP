@@ -1,0 +1,24 @@
+import java.io.*;
+
+class DataFile {
+    public static void main(String[] args) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+            int lines = 0, words = 0, chars = 0;
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                lines++;
+                words += line.split("\\s+").length;
+                chars += line.replaceAll("\\s", "").length();
+            }
+
+            System.out.println(lines);
+            System.out.println(words);
+            System.out.println(chars);
+            br.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
