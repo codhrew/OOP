@@ -1,0 +1,22 @@
+import java.util.*;
+
+class GenericSearch {
+    static <T> boolean searchElement(LinkedList<T> list, T element) {
+        return list.contains(element);
+    }
+
+    public static void main(String[] args) {
+        LinkedList<Integer> nums = new LinkedList<>();
+        nums.add(1);
+        nums.add(2);
+        nums.add(3);
+
+        LinkedList<String> names = new LinkedList<>();
+        names.add("A");
+        names.add("B");
+        names.add("C");
+
+        System.out.println(searchElement(nums, 2));
+        System.out.println(searchElement(names, "B"));
+    }
+}
